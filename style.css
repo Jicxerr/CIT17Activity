@@ -4,11 +4,6 @@ body{
     color: black;
 }
 
-h1, h2, h3, h4, h5{
-    margin: 0px;
-    padding: 0px;
-}
-
 nav a{
     background-color: brown;
     padding: 10px 30px;
@@ -20,4 +15,5 @@ nav a{
 
 nav a:hover{
     background-color: blueviolet;
+    padding: 15px 35px;;
 }

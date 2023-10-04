@@ -8,6 +8,11 @@
 <body>
     <h2>Git Commands</h2>
     <br>
+    <h5>Initialize to local folder</h5>
+    <p>
+        git init<br>
+        git remote add origin (paste github repository url)<br>
+    </p>
     <h5>Add</h5>
     <p>
         git add . <br>
