@@ -9,6 +9,8 @@
 </head>
 <body>
     <h1>CIT17 Web Information System</h1>
+    <h3>Activities Links and files</h3>
+    <h3>Jimmy Jucar Jr</h3>
     
     <nav>
         <a href="index.php">Home</a>
