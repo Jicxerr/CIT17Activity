@@ -39,7 +39,7 @@
     $c = $a--;
     echo "Decrement Operation Result: $c <br/>";
 
-    <print "END">
+    print "END";
     ?>
 </body>
 </html>

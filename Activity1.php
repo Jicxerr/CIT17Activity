@@ -74,7 +74,7 @@
         echo "CIT17";
         echo "Hello World";
 
-        <print "END">;
+        print "END";
     ?>
 </body>
 </html>
