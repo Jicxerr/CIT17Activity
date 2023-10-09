@@ -73,6 +73,8 @@
         echo "<br>";    
         echo "CIT17";
         echo "Hello World";
+
+        <print "END">;
     ?>
 </body>
 </html>
