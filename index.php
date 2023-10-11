@@ -33,7 +33,7 @@
             echo "Failed to open directory.";
         }
 
-        echo "sdfsdf";
+
     ?>
 
 </body>
