@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>CIT17</title>
 </head>
 <body>
@@ -17,24 +17,27 @@
         <a href="http://github.com">Github</a>
         <a href="git.php">Git Commands</a>
     </nav>
-   
-    <?php
-        $dirPath = "./";
-        if ($handle = opendir($dirPath)) {
-            echo "<br><br>--- FILES LIST ---<br><br>";
-            while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != ".." && is_file($dirPath . '/' . $entry)) {
-                echo "<a href=".$entry.">".$entry."</a>" . "<br>";
+    
+    <div  class="files">
+        <?php
+            $dirPath = "./";
+            if ($handle = opendir($dirPath)) {
+                echo "<br><br>--- FILES LIST ---<br><br>";
+                while (false !== ($entry = readdir($handle))) {
+                    if ($entry != "." && $entry != ".." && is_file($dirPath . '/' . $entry)) {
+                    echo "<a href=".$entry.">".$entry."</a>" . "<br>";
+                    }
                 }
+                closedir($handle);
+            
+            } else {
+                echo "Failed to open directory.";
             }
-            closedir($handle);
-        
-        } else {
-            echo "Failed to open directory.";
-        }
 
-
-    ?>
+            print "sdfsdfsdf ";
+        ?>
+    </div>
+    
 
 </body>
 </html>
