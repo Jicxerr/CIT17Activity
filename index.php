@@ -17,7 +17,7 @@
         <a href="http://github.com">Github</a>
         <a href="git.php">Git Commands</a>
     </nav>
-    
+   
     <?php
         $dirPath = "./";
         if ($handle = opendir($dirPath)) {
@@ -32,6 +32,8 @@
         } else {
             echo "Failed to open directory.";
         }
+
+        echo "sdfsdf";
     ?>
 
 </body>
