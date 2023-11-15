@@ -74,7 +74,23 @@
     </table><hr>
     <h1>Course</h1>
     <?php 
-    
+    $coursesql = "SELECT * FROM student";
+    $result = $conn->query($coursesql);
+
+    // Check if the query was successful
+    if ($result) {
+        // Process the results
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr><td>" . $row["StudentID"] . "</td>"
+            . "<td>" . $row["FirstName"]. "</td>"
+            . "<td>" . $row["LastName"]. "</td>"
+            . "<td>" . $row["DateOfBirth"]. "</td>"
+            . "<td>" . $row["Email"]. "</td>"
+            . "<td>" . $row["Phone"]. "</td></tr>";
+        }
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
     ?>
     <h1>Enrollemnt</h1>
     <?php 
