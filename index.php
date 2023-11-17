@@ -33,8 +33,6 @@
             } else {
                 echo "Failed to open directory.";
             }
-
-            print "sdfsdfsdf ";
         ?>
     </div>
     
