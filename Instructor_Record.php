@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-    <title>StudentRecord</title>
+    <title>InstructorRecord</title>
 </head>
 <body>
     <ul class="navigation-bar">
@@ -31,41 +30,36 @@
         echo "Server Status: Connected successfully";
         ?>
     </div>
-    
 
     <div class="card-style">
-    <h1>Add Student Record</h1>
-    <table style="width:40%">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-            <tr><td><label for="fname">First name:</label></td>
-            <td><input type="text" name="studentFname" id="studentFname" value=""></td></tr>
-            <tr><td><label for="fname">Last name:</label></td>
-            <td><input type="text" name="studentLname" id="studentLname" value=""></td></tr>
-            <tr><td><label for="fname">Date of Birth</label></td>
-            <td><input type="text" name="studentDOB" id="studentDOB" value=""></td></tr>
-            <tr><td><label for="fname">Email:</label></td>
-            <td><input type="text" name="studentEmail" id="studentEmail" value=""></td></tr>
-            <tr><td><label for="fname">Phone:</label></td>
-            <td><input type="text" name="studentPhone" id="studentPhone" value=""></td></tr>   
-            <tr><td></td><td><input type="submit" value="submit" name="submit"></td></tr>
-        </form>
-    </table>
+        <h1>Add Instructor Record</h1>
+        <table style="width:40%">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <tr><td><label for="fname">First name:</label></td>
+                <td><input type="text" name="insfname" id="insfname" value=""></td></tr>
+                <tr><td><label for="fname">Last name:</label></td>
+                <td><input type="text" name="inslname" id="inslname" value=""></td></tr>
+                <tr><td><label for="fname">Email:</label></td>
+                <td><input type="text" name="insemail" id="insemail" value=""></td></tr>
+                <tr><td><label for="fname">Phone:</label></td>
+                <td><input type="text" name="insphone" id="insphone" value=""></td></tr> 
+                <tr><td></td><td><input type="submit" value="submit" name="submit"></td></tr>
+            </form>
+        </table>
     </div>
     <?php 
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         try{
-            $studenfname = $_POST['studentFname'];
-            $studentlname = $_POST['studentLname'];
-            $studentDOB = $_POST['studentDOB'];
-            $studentemail = $_POST['studentEmail'];
-            $studentphone = (int)$_POST['studentPhone'];
-            $studentsql = "INSERT INTO student (FirstName,LastName,DateOfBirth,Email,Phone) 
+            $studenfname = $_POST['insfname'];
+            $studentlname = $_POST['inslname'];
+            $studentemail = $_POST['insemail'];
+            $studentphone = (int)$_POST['insphone'];
+            $studentsql = "INSERT INTO instructor (FirstName,LastName,Email,Phone) 
                                     VALUES(
                                     '$studenfname',
                                     '$studentlname',
-                                    '$studentDOB',
                                     '$studentemail',
                                     $studentphone)";
             //$studentrecord = $conn->exec($studentsql);
@@ -82,30 +76,28 @@
         
         
     }?>
+
     <div class="card-style">
-        <h1>Students Records</h1>
+        <h1>Instructor Records</h1>
         <table style="width:100%">
         <tr>
-            <th>Student ID</th>
+            <th>Instructor ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Date of Birth</th>
             <th>Email</th>
             <th>Phone</th>
         </tr>
         <?php
-        // Example query
-        $sql = "SELECT * FROM student";
+        $sql = "SELECT * FROM instructor";
         $result = $conn->query($sql);
 
         // Check if the query was successful
         if ($result) {
             // Process the results
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["StudentID"] . "</td>"
+                echo "<tr><td>" . $row["InstructorID"] . "</td>"
                 . "<td>" . $row["FirstName"]. "</td>"
                 . "<td>" . $row["LastName"]. "</td>"
-                . "<td>" . $row["DateOfBirth"]. "</td>"
                 . "<td>" . $row["Email"]. "</td>"
                 . "<td>" . $row["Phone"]. "</td></tr>";
             }
