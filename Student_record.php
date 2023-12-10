@@ -13,6 +13,7 @@
         <li><a href="Course_Record.php">Course</a></li>
         <li><a href="Instructor_Record.php">Instructor</a></li>
         <li><a href="Enrollment_Record.php">Enrollment</a></li>
+        <li><a href="setup.php">Setup</a></li>
     </ul>
     <div class="status">
         <?php // Check if the query was successful

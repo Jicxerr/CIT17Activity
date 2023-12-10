@@ -12,6 +12,7 @@
         <li><a href="Course_Record.php">Course</a></li>
         <li><a href="Instructor_Record.php">Instructor</a></li>
         <li><a href="Enrollment_Record.php">Enrollment</a></li>
+        <li><a href="setup.php">Setup</a></li>
     </ul>
     <div class="status">
         <?php // Check if the query was successful
@@ -134,7 +135,7 @@
                 }
                 ?>
             </select>
-            <input type="submit" value="Show Student Info">
+            <input type="submit" value="Show Course Info">
         </form>
         <?php
     // Check if the form has been submitted and a student ID is selected
